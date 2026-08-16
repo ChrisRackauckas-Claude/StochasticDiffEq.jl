@@ -278,7 +278,7 @@ const is_APPVEYOR = Sys.iswindows() && haskey(ENV, "APPVEYOR")
     end
 
     if !is_APPVEYOR && GROUP == "Multithreaded"
-        @time @safetestset "Mulithreaded Jump Thread Safety Tests" begin
+        @time @safetestset "Multithreaded Jump Thread Safety Tests" begin
             include("multithreaded_jump_test.jl")
         end
     end
