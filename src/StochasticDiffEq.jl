@@ -123,6 +123,7 @@ end
 import SciMLBase
 
 using LevyArea
+using PrecompileTools: @compile_workload, @setup_workload
 
 const CompiledFloats = Union{Float32, Float64}
 
@@ -185,6 +186,7 @@ include("SROCK_utils.jl")
 include("composite_algs.jl")
 include("weak_utils.jl")
 include("default_sde_alg.jl")
+include("precompile.jl")
 
 export StochasticDiffEqAlgorithm, StochasticDiffEqAdaptiveAlgorithm,
     StochasticCompositeAlgorithm

@@ -21,6 +21,9 @@ const is_APPVEYOR = Sys.iswindows() && haskey(ENV, "APPVEYOR")
 
 @time begin
     if GROUP == "All" || GROUP == "Interface1"
+        @time @safetestset "Precompile workload" begin
+            include("precompile_workload.jl")
+        end
         @time @safetestset "Default Solver Tests" begin
             include("default_solver_test.jl")
         end
